@@ -45,13 +45,13 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-mail-send-line"></i>
-                        <span>PArtner Page Setup</span>
+                        <span>Partner Page Setup</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                       
-                        <li><a href="{{ route('partner.page') }}">Partner</a></li>
+                        <li><a href="{{ route('partner.page') }}">Partner Info</a></li>
                          <li><a href="{{ route('partner.add.multiimage') }}">AddPartner Multi Image</a></li>
-                        {{-- <li><a href="{{ route('partner.all.multiimage') }}">All Multi Image</a></li> --}}
+                        <li><a href="{{ route('all.multiimage') }}">All Multi Image</a></li>
                     </ul>
                 </li>
                 <li>

@@ -100,15 +100,18 @@ class PartnerController extends Controller
     public function DeletePartnerMultiImage($id){
         
         $multiImage = partnermultiimage::findOrFail($id);
-        $img = $multiImage->multi_image;
+        //dd($multiImage);
+        $img = $multiImage->partner_image;
         unlink($img);
 
-        partnermultiimage::findFail($id)->delete();
+        partnermultiimage::findorFail($id)->delete();
 
         $notification = array(
           'message' => 'Image Deleted successfully',
-          'a'
+          'alert-type' => 'success'
         );
+
+        return redirect()->route('all.multiimage')->with($notification);
     }
 
 
