@@ -101,10 +101,11 @@ class PartnerController extends Controller
         
         $multiImage = partnermultiimage::findOrFail($id);
         //dd($multiImage);
-        $img = $multiImage->partner_image;
-        unlink($img);
-
-        partnermultiimage::findorFail($id)->delete();
+        if (file_exists($multiImage->multi_image)) {
+            unlink($multiImage->multi_image);
+        }
+        
+        $multiImage->delete();
 
         $notification = array(
           'message' => 'Image Deleted successfully',
